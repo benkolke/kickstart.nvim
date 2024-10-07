@@ -64,6 +64,9 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -145,6 +148,30 @@ vim.o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
+
+vim.opt.smartindent = true
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
+vim.opt.expandtab = true
+vim.opt.number = true
+
+vim.opt.lbr = true
+vim.opt.background = 'dark'
+
+vim.opt.syntax = 'on'
+
+vim.opt.incsearch = true
+
+vim.opt.autoread = true
+
+vim.opt.scrolloff = 8
+vim.opt.swapfile = false
+
+vim.opt.fixeol = false
+vim.opt.fixendofline = false
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
