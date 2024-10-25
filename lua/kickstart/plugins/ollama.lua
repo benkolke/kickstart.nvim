@@ -43,18 +43,18 @@ return {
     prompts = {
       -- basically "no prompt"
       Raw = {
-        prompt = '$input',
+        prompt = 'Be as terse as possible in response to the following prompt without leaving any critical information out. If you can respond in just code, do so:\n\n$input\n\n',
         input_label = '>',
         action = 'display',
       },
 
       Ask_About_Code = {
-        prompt = 'I have a question about this: $input\n\n Here is the code:\n```$ftype\n$sel```',
+        prompt = 'Be as terse as possible in response to the following prompt without leaving any critical information out. If you can respond in just code, do so:\n\nI have a question about this: $input\n\n Here is the code:\n```$ftype\n$sel```',
         input_label = 'Q',
       },
 
       Explain_Code = {
-        prompt = 'Explain this code:\n```$ftype\n$sel\n```',
+        prompt = 'Be as terse as possible in response to the following prompt without leaving any critical information out:\n\nExplain this code:\n```$ftype\n$sel\n```',
       },
 
       Simplify_Code = {
