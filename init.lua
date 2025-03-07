@@ -1,5 +1,27 @@
 --[[
 
+=======
+
+=====================================================================
+==================== READ THIS BEFORE CONTINUING ====================
+=====================================================================
+========                                    .-----.          ========
+========         .----------------------.   | === |          ========
+========         |.-""""""""""""""""""-.|   |-----|          ========
+========         ||                    ||   | === |          ========
+========         ||   KICKSTART.NVIM   ||   |-----|          ========
+========         ||                    ||   | === |          ========
+========         ||                    ||   |-----|          ========
+========         ||:Tutor              ||   |:::::|          ========
+========         |'-..................-'|   |____o|          ========
+========         `"")----------------(""`   ___________      ========
+========        /::::::::::|  |::::::::::\  \ no mouse \     ========
+========       /:::========|  |==hjkl==:::\  \ required \    ========
+========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
+========                                                     ========
+=====================================================================
+=====================================================================
+
 What is Kickstart?
 
   Kickstart.nvim is *not* a distribution.
@@ -179,6 +201,7 @@ vim.opt.fixendofline = false
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<leader>9', '<cmd>e#<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -445,11 +468,18 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          layout_strategy = 'vertical',
+          layout_config = {
+            height = 0.99,
+            width = 0.99,
+            preview_cutoff = 0,
+            preview_height = 0.7,
+          },
+          --   mappings = {
+          --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          --   },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
@@ -731,11 +761,11 @@ require('lazy').setup({
               configurationSources = { 'flake8' },
               plugins = {
                 flake8 = {
-                  ignore = { 'E501', 'E231' },
+                  ignore = { 'E501', 'E231', 'E203' },
                   maxLineLength = 999,
                 },
                 pycodestyle = {
-                  ignore = { 'E501', 'E231' },
+                  ignore = { 'E501', 'E231', 'E203' },
                   maxLineLength = 999,
                 },
               },
@@ -1042,7 +1072,9 @@ require('lazy').setup({
   -- require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.harpoon',
-  require 'kickstart.plugins.ollama',
+  -- require 'kickstart.plugins.ollama',
+  -- require 'kickstart.plugins.copilot',
+  require 'kickstart.plugins.copilotchat',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
