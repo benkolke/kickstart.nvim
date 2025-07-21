@@ -198,6 +198,9 @@ vim.opt.fixendofline = false
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>p', '"+p')
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -1075,7 +1078,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.ollama',
   -- require 'kickstart.plugins.copilot',
   require 'kickstart.plugins.copilotchat',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
