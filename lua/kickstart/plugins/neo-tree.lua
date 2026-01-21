@@ -42,6 +42,15 @@ return {
               state.commands['close_window'](state)
             end
           end,
+          ['l'] = function(state)
+            local node = state.tree:get_node()
+            if require('neo-tree.utils').is_expandable(node) then
+              state.commands['toggle_node'](state)
+            else
+              state.commands['open'](state)
+              state.commands['close_window'](state)
+            end
+          end,
         },
       },
     },
