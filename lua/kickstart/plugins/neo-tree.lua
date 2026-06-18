@@ -51,6 +51,11 @@ return {
               state.commands['close_window'](state)
             end
           end,
+          ['gr'] = function(state)
+            local node = state.tree:get_node()
+            local path = node:get_id()
+            require('telescope.builtin').live_grep { search_dirs = { path } }
+          end,
         },
       },
     },
